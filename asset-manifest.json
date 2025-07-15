@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/TestAcne-frontend/static/css/main.5e7b1615.css",
-    "main.js": "/TestAcne-frontend/static/js/main.91f24430.js",
+    "main.js": "/TestAcne-frontend/static/js/main.151e4c09.js",
     "static/js/453.8ab44547.chunk.js": "/TestAcne-frontend/static/js/453.8ab44547.chunk.js",
     "static/media/bootstrap-icons.woff?": "/TestAcne-frontend/static/media/bootstrap-icons.1295669cd4e305c97f2c.woff",
     "static/media/bootstrap-icons.woff2?": "/TestAcne-frontend/static/media/bootstrap-icons.92ea18a81d737146ff04.woff2",
@@ -15,11 +15,11 @@
     "static/media/TMU logo.png": "/TestAcne-frontend/static/media/TMU logo.9c7d4f63ecef68c9ff28.png",
     "index.html": "/TestAcne-frontend/index.html",
     "main.5e7b1615.css.map": "/TestAcne-frontend/static/css/main.5e7b1615.css.map",
-    "main.91f24430.js.map": "/TestAcne-frontend/static/js/main.91f24430.js.map",
+    "main.151e4c09.js.map": "/TestAcne-frontend/static/js/main.151e4c09.js.map",
     "453.8ab44547.chunk.js.map": "/TestAcne-frontend/static/js/453.8ab44547.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5e7b1615.css",
-    "static/js/main.91f24430.js"
+    "static/js/main.151e4c09.js"
   ]
 }
