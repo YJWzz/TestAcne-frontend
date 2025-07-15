@@ -1,0 +1,11 @@
+# 共用
+__pycache__/
+*.log
+
+# 後端
+backend/uploads/
+backend/detect/*.jpg
+
+# 前端
+frontend/node_modules/
+frontend/dist/
