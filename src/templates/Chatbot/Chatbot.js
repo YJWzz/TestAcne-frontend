@@ -41,7 +41,7 @@ function Chatbot() {
     setIsTyping(true);
 
     try {
-      const res = await fetch('http://localhost:5678/webhook/chatbot', {
+      const res = await fetch('https://YJWzz-n8n-free.hf.space/webhook/chatbot', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: trimmed })
@@ -106,3 +106,4 @@ function Chatbot() {
 }
 
 export default Chatbot;
+
