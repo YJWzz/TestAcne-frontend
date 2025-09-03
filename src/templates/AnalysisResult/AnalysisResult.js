@@ -46,7 +46,7 @@ function AnalysisResult() {
     const prompt = resultList.map(r => `${r.face_part} face: ${r.severity}`).join('\n');
 
     try {
-      const res = await fetch('http://localhost:5678/webhook/chatbot', {
+      const res = await fetch('https://YJWzz-n8n-free.hf.space/webhook/chatbot', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: `根據以下痘痘分析結果提供衛教建議和可參考資源：\n${prompt}` })
@@ -191,3 +191,4 @@ function AnalysisResult() {
 }
 
 export default AnalysisResult;
+
