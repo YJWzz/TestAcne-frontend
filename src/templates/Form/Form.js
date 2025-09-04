@@ -31,10 +31,10 @@ function Form() {
                 canvas.height = img.height * scale;
                 canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
                 canvas.toBlob(blob => {
-                    resolve(new File([blob], file.name.replace(/\.\w+$/, '.webp'), {
-                        type: 'image/webp'
+                    resolve(new File([blob], file.name.replace(/\.\w+$/, '.jpg'), {
+                        type: 'image/jpeg'
                     }));
-                }, 'image/webp', quality);
+                }, 'image/jpeg', quality);
             };
             img.src = URL.createObjectURL(file);
         });
@@ -210,4 +210,5 @@ function Form() {
 }
 
 export default Form;
+
 
