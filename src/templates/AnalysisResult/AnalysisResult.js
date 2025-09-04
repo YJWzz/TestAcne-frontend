@@ -21,7 +21,7 @@ function AnalysisResult() {
     const uid = params.get('user_id');
     if (uid) {
       setUserId(uid);
-      fetch(`/result?user_id=${uid}`)
+      fetch(`${process.env.REACT_APP_API_URL}/result?user_id=${uid}`)
         .then(res => res.json())
         .then(data => {
           setResults(data.results || []);
@@ -191,4 +191,5 @@ function AnalysisResult() {
 }
 
 export default AnalysisResult;
+
 
