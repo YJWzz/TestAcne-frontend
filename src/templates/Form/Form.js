@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Button } from "react-bootstrap";
 import Formstyles from "./Form.module.css";
 
+
+
 function Form() {
     const [username, setUsername] = useState('');
     const [userId, setUserId] = useState('');
@@ -18,6 +20,26 @@ function Form() {
         right: '',
     });
 
+    // --- 新增：圖片壓縮工具 ----
+    const compressImage = (file, max = 1280, quality = 0.85) =>
+        new Promise(resolve => {
+            const img = new Image();
+            img.onload = () => {
+                const canvas = document.createElement('canvas');
+                const scale = Math.min(max / img.width, max / img.height, 1);
+                canvas.width = img.width * scale;
+                canvas.height = img.height * scale;
+                canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+                canvas.toBlob(blob => {
+                    resolve(new File([blob], file.name.replace(/\.\w+$/, '.webp'), {
+                        type: 'image/webp'
+                    }));
+                }, 'image/webp', quality);
+            };
+            img.src = URL.createObjectURL(file);
+        });
+    // --------------------------
+
     const handleUsernameSubmit = async () => {
         if (!username.trim()) {
             alert('Please enter your name before proceeding.');
@@ -27,7 +49,7 @@ function Form() {
         const id = username.trim().toLowerCase().replace(/\s+/g, '_');
 
         try {
-            const res = await fetch(`${process.env.REACT_APP_API_URL}/check-user-id?user_id=${id}`);
+            const res = await fetch(`${process.env.N8N_APP_API_URL}/check-user-id?user_id=${id}`);
             const data = await res.json();
 
             if (data.exists) {
@@ -48,9 +70,10 @@ function Form() {
         }
     };
 
-    const handleImageChange = (e, position) => {
-        const file = e.target.files[0];
-        if (file) {
+    const handleImageChange =  async (e, position) => {
+        const raw = e.target.files[0];
+        if (raw) {
+            const file = await compressImage(raw);   // 👉 壓縮
             const newImages = { ...images, [position]: file };
             setImages(newImages);
 
@@ -159,7 +182,7 @@ function Form() {
                                         <Button
                                             type="button"
                                             variant="danger"
-                                            style={{margin:'10px'}}
+                                            style={{ margin: '10px' }}
                                             onClick={() => {
                                                 setImages(prev => ({ ...prev, [pos]: null }));
                                                 setPreviews(prev => ({ ...prev, [pos]: '' }));
@@ -187,4 +210,3 @@ function Form() {
 }
 
 export default Form;
-
