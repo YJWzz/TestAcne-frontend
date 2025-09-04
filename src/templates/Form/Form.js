@@ -49,7 +49,7 @@ function Form() {
         const id = username.trim().toLowerCase().replace(/\s+/g, '_');
 
         try {
-            const res = await fetch(`${process.env.N8N_APP_API_URL}/check-user-id?user_id=${id}`);
+            const res = await fetch(`${process.env.REACT_APP_API_URL}/check-user-id?user_id=${id}`);
             const data = await res.json();
 
             if (data.exists) {
@@ -210,3 +210,4 @@ function Form() {
 }
 
 export default Form;
+
