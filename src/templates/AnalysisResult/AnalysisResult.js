@@ -90,7 +90,7 @@ function AnalysisResult() {
                 <div key={index} className={AnalysisResultstyles.resultCard}>
                   <h3>{capitalize(result.face_part)} Face</h3>
                   <img
-                    src={`/uploads/${userId}/${result.filename}`}
+                    src={`${process.env.REACT_APP_API_URL}/uploads/${userId}/${result.filename}`}
                     alt={`${result.face_part} face`}
                     className={AnalysisResultstyles.resultImage}
                   />
@@ -191,5 +191,6 @@ function AnalysisResult() {
 }
 
 export default AnalysisResult;
+
 
 
