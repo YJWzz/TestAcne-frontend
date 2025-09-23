@@ -1,4 +1,7 @@
-
+:global(.carousel-control-prev),
+:global(.carousel-control-next) {
+  width: 10%;
+}
 
 .container {
   font-family: Arial, sans-serif;
@@ -112,3 +115,4 @@
 .button:hover {
   background-color: #45A049;
 }
+
