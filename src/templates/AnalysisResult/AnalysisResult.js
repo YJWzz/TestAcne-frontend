@@ -127,7 +127,7 @@ function AnalysisResult() {
             )}
           </div>
           <div className={AnalysisResultstyles.back}>
-            <a href="/" className={AnalysisResultstyles.backLink}>返回青春痘護膚平台</a>
+            <a href="/" className={AnalysisResultstyles.backLink}>返回智慧痤瘡照護平台</a>
 
           </div>
 
@@ -191,6 +191,7 @@ function AnalysisResult() {
 }
 
 export default AnalysisResult;
+
 
 
 
