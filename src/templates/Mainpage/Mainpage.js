@@ -69,7 +69,7 @@ function Mainpage() {
         <Container>
           <div style={{ width: '33%' }}></div>
           <Navbar.Brand className={Mainpagestyles.title}>
-            青春痘護膚平台
+          智慧痤瘡照護平台
           </Navbar.Brand>
           <div style={{ width: '33%', textAlign: 'right' }}>
             <Dropdown align="end">
@@ -174,5 +174,6 @@ function Mainpage() {
 }
 
 export default Mainpage;
+
 
 
